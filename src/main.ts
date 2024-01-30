@@ -1,3 +1,4 @@
+import './css/reset.css'
 import './style.css'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = /*html*/`
