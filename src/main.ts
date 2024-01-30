@@ -1,6 +1,6 @@
-import './css/reset.css'
-import './style.css'
+import "./css/reset.css";
+import "./style.css";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = /*html*/`
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/`
   <h1>Hello World</h1>
-`
+`;

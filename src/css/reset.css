@@ -5,8 +5,7 @@
 }
 
 html {
-	-webkit-text-size-adjust: 100%;
-	-moz-tab-size: 4;
+	text-size-adjust: 100%;
 	tab-size: 4;
 }
 
@@ -88,7 +87,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-	-webkit-appearance: button;
+	appearance: button;
 }
 
 ::-moz-focus-inner {
@@ -118,16 +117,16 @@ progress {
 }
 
 [type='search'] {
-	-webkit-appearance: textfield;
+	appearance: textfield;
 	outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+	appearance: none;
 }
 
 ::-webkit-file-upload-button {
-	-webkit-appearance: button;
+	appearance: button;
 	font: inherit;
 }
 
