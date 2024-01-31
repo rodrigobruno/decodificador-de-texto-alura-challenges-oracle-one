@@ -1,0 +1,52 @@
+@media only screen and (width <=1024px) {
+    #app-container {
+        gap: 2rem 4rem;
+        grid-template-columns: 2rem 1fr 1fr;
+    }
+}
+
+@media only screen and (width <=768px) {
+    #app-container {
+        gap: 4rem 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3rem 1fr auto auto;
+        height: max-content;
+        min-height: 100svh;
+        max-height: max-content;
+        width: 100%;
+    }
+
+    header,
+    main,
+    aside,
+    footer {
+        grid-column: 1 / 4;
+    }
+
+    header {
+        display: flex;
+        justify-content: start;
+
+    }
+
+    main {
+        padding-block: 0;
+
+    }
+
+    .no-messages-found img {
+        display: none;
+    }
+}
+
+@media only screen and (width <=480px) {
+    #app-container {
+        gap: 2rem 0;
+        padding: 1rem;
+    }
+
+    .message-actions {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+}
