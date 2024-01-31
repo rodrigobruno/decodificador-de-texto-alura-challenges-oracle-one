@@ -2,6 +2,9 @@ import "./css/reset.css";
 import "./css/style.css";
 import "./css/colors.css";
 import "./css/responsive.css";
+import logo from "./assets/logo.svg";
+import warning from "./assets/warning.svg";
+import noMessagesFound from "./assets/no-messages-found.svg";
 import { copyToClipboard } from "./copyToClipboard.ts";
 import { convertingMessageHandle } from "./convertingMessageHandle.ts";
 import { cleanInputMessage } from "./cleanInputMessage.ts";
@@ -9,7 +12,7 @@ import { cleanInputMessage } from "./cleanInputMessage.ts";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
   <div id="app-container">
     <header>
-      <img src="/logo.svg" alt="Logo alura">
+      <img src="${logo}" alt="Logo alura">
     </header>
     <main>
       <div class="input-message-container">
@@ -19,7 +22,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
         </button>
       </div>
       <span class="message-warning">
-        <img src="/warning.svg" alt={}>
+        <img src="${warning}" alt={}>
         Apenas letras minúsculas e sem acento.
       </span>
       <div class="message-actions">
@@ -29,7 +32,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = /*html*/ `
     </main>
     <aside>
       <div class="no-messages-found">
-        <img src="/no-messages-found.svg" alt={}>
+        <img src="${noMessagesFound}" alt={}>
         <div class="no-messages-found-infos">
           <h2>Nenhuma mensagem encontrada</h2>
           <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
