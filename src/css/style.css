@@ -75,7 +75,6 @@ button:disabled {
 /* Header */
 
 header {
-    align-content: center;
     display: flex;
     flex-direction: column;
     gap: 2rem;

@@ -24,9 +24,18 @@
     }
 
     header {
-        display: flex;
-        justify-content: start;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    #theme-select {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    #icon-select {
+        margin-right: 0.5rem;
     }
 
     main {
