@@ -8,14 +8,6 @@
     text-rendering: optimizelegibility;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-}
-
 /* Link */
 
 a {
@@ -47,6 +39,7 @@ button:disabled {
 }
 
 .btn-ghost {
+    align-items: center;
     border-radius: 8px;
     display: flex;
     line-height: 1;
@@ -82,12 +75,40 @@ button:disabled {
 /* Header */
 
 header {
+    align-content: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-header img {
+header #logo {
+    display: block;
     height: 3rem;
+    width: 2rem;
+}
+
+#theme-select {
+    display: flex;
+    flex-direction: column;
+}
+
+#theme-select>div,
+#theme-select>button {
+    height: 2rem;
+    width: 2rem;
+}
+
+.btn-theme svg rect {
+    stroke-width: 1;
+    stroke-opacity: 0.5;
+}
+
+#icon-select {
+    margin-bottom: 0.5rem;
+}
+
+#icon-select svg {
+    height: 2rem;
     width: 2rem;
 }
 

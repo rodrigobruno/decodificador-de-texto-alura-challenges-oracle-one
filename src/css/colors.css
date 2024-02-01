@@ -1,5 +1,6 @@
 :root {
     --white: #fff;
+    --black: #000;
     --green: #198754;
     --red: #DC3545;
     --dark-blue-100: #609ed4;
@@ -17,30 +18,45 @@
     --gray-300: #868e96;
     --gray-400: #495057;
     --gray-500: #343a40;
+}
 
+body {
     background-color: var(--light-blue-100);
     color: var(--dark-blue-300);
     color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
+/* @media (prefers-color-scheme: dark) {
+    html {
         background-color: var(--dark-blue-400);
         color: var(--light-blue-300);
         color-scheme: dark;
     }
+} */
+
+
+body.dark {
+    background-color: var(--dark-blue-400);
+    color: var(--light-blue-300);
+    color-scheme: dark;
 }
+
 
 ::selection {
     color: var(--white);
     background-color: var(--dark-blue-300);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     ::selection {
         color: var(--dark-blue-500);
         background-color: var(--dark-blue-100);
     }
+} */
+
+.dark ::selection {
+    color: var(--dark-blue-500);
+    background-color: var(--dark-blue-100);
 }
 
 /* Link */
@@ -57,7 +73,7 @@ a:hover {
     color: var(--dark-blue-400);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     a {
         color: var(--light-blue-300);
     }
@@ -65,6 +81,14 @@ a:hover {
     a:hover {
         color: var(--light-blue-400);
     }
+} */
+
+.dark a {
+    color: var(--light-blue-300);
+}
+
+.dark a:hover {
+    color: var(--light-blue-400);
 }
 
 /* Button */
@@ -75,14 +99,26 @@ button {
     color: var(--white);
 }
 
+.dark button {
+    background: var(--light-blue-200);
+    border: 1px solid var(--light-blue-200);
+    color: var(--dark-blue-400);
+}
+
+button:focus-visible {
+    box-shadow: 0 0 0 4px var(--dark-blue-100);
+}
+
 button:disabled {
     background: var(--dark-blue-200);
     border-color: var(--dark-blue-200);
     color: var(--gray-200);
 }
 
-button:focus-visible {
-    box-shadow: 0 0 0 4px var(--dark-blue-100);
+.dark button:disabled {
+    background: var(--light-blue-500);
+    border-color: var(--light-blue-500);
+    color: var(--light-blue-400);
 }
 
 button:not(:disabled):hover {
@@ -90,7 +126,12 @@ button:not(:disabled):hover {
     border-color: var(--dark-blue-400);
 }
 
-@media (prefers-color-scheme: dark) {
+.dark button:not(:disabled):hover {
+    background: var(--light-blue-400);
+    border-color: var(--light-blue-400);
+}
+
+/* @media (prefers-color-scheme: dark) {
     button {
         background: var(--light-blue-200);
         border: 1px solid var(--light-blue-200);
@@ -107,12 +148,18 @@ button:not(:disabled):hover {
         background: var(--light-blue-400);
         border-color: var(--light-blue-400);
     }
-}
+} */
 
 .btn-secondary {
     background: transparent;
     border: 1px solid var(--dark-blue-300);
     color: var(--dark-blue-300);
+}
+
+.dark .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--light-blue-200);
+    color: var(--light-blue-200);
 }
 
 .btn-secondary:disabled {
@@ -121,12 +168,22 @@ button:not(:disabled):hover {
     color: var(--dark-blue-100);
 }
 
+.dark .btn-secondary:disabled {
+    background: transparent;
+    border: 1px solid var(--dark-blue-200);
+    color: var(--dark-blue-200);
+}
+
 .btn-secondary:not(:disabled):hover {
     background: var(--light-blue-300);
 }
 
+.dark .btn-secondary:not(:disabled):hover {
+    background: var(--dark-blue-500);
+}
 
-@media (prefers-color-scheme: dark) {
+
+/* @media (prefers-color-scheme: dark) {
     .btn-secondary {
         border: 1px solid var(--light-blue-200);
         color: var(--light-blue-200);
@@ -140,7 +197,7 @@ button:not(:disabled):hover {
     .btn-secondary:not(:disabled):hover {
         background: var(--dark-blue-500);
     }
-}
+} */
 
 .btn-ghost {
     background: transparent;
@@ -148,8 +205,18 @@ button:not(:disabled):hover {
     color: var(--dark-blue-300);
 }
 
+.dark .btn-ghost {
+    background: transparent;
+    border-color: transparent;
+    color: var(--light-blue-300);
+}
+
 .btn-ghost svg {
     fill: var(--dark-blue-300);
+}
+
+.dark .btn-ghost svg {
+    fill: var(--light-blue-300);
 }
 
 .btn-ghost:not(:disabled):hover {
@@ -157,7 +224,12 @@ button:not(:disabled):hover {
     border-color: var(--white);
 }
 
-@media (prefers-color-scheme: dark) {
+.dark .btn-ghost:not(:disabled):hover {
+    background: var(--dark-blue-300);
+    border-color: var(--dark-blue-300);
+}
+
+/* @media (prefers-color-scheme: dark) {
     .btn-ghost {
         color: var(--light-blue-300);
     }
@@ -170,6 +242,60 @@ button:not(:disabled):hover {
         background: var(--dark-blue-300);
         border-color: var(--dark-blue-300);
     }
+} */
+
+/* Header */
+
+#logo {
+    fill: var(--dark-blue-400)
+}
+
+.dark #logo {
+    fill: var(--light-blue-300)
+}
+
+.btn-theme svg rect {
+    stroke: var(--white);
+}
+
+#btn-theme-light svg {
+    color: var(--dark-blue-100);
+}
+
+#btn-theme-dark svg {
+    color: var(--dark-blue-500);
+}
+
+#icon-palette {
+    filter: drop-shadow(0 0 5px rgb(0 0 0 / 50%));
+}
+
+#icon-palette-gradient .stop1 {
+    stop-color: #f00;
+}
+
+#icon-palette-gradient .stop2 {
+    stop-color: #f7ff00;
+}
+
+#icon-palette-gradient .stop3 {
+    stop-color: #24fb00;
+}
+
+#icon-palette-gradient .stop4 {
+    stop-color: #0ff;
+}
+
+#icon-palette-gradient .stop5 {
+    stop-color: #000bff;
+}
+
+#icon-palette-gradient .stop6 {
+    stop-color: #f0c;
+}
+
+#icon-palette-gradient .stop7 {
+    stop-color: #f00;
 }
 
 /* Main */
@@ -194,7 +320,15 @@ button:not(:disabled):hover {
     color: var(--gray-400);
 }
 
-@media (prefers-color-scheme: dark) {
+.message-warning #icon-warning {
+    fill: var(--gray-400);
+}
+
+.dark .message-warning #icon-warning {
+    fill: var(--light-blue-400);
+}
+
+/* @media (prefers-color-scheme: dark) {
     #input-message {
         background: transparent;
         border-bottom: 2px dashed var(--light-blue-500);
@@ -214,6 +348,26 @@ button:not(:disabled):hover {
     .message-warning {
         color: var(--light-blue-400);
     }
+} */
+
+.dark #input-message {
+    background: transparent;
+    border-bottom: 2px dashed var(--light-blue-500);
+    color: var(--light-blue-300);
+    scrollbar-color: var(--light-blue-400) var(--dark-blue-500);
+}
+
+.dark #input-message:focus-visible {
+    border-color: var(--light-blue-300);
+    box-shadow: 0 0 61px 0 rgba(96 158 212 / 20%);
+}
+
+.dark #input-message[contenteditable]:empty::before {
+    color: var(--light-blue-500);
+}
+
+.dark .message-warning {
+    color: var(--light-blue-400);
 }
 
 /* Aside */
@@ -247,7 +401,7 @@ aside {
     color: var(--white);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     aside {
         background: var(--dark-blue-500);
         box-shadow: 0 24px 32px -8px rgb(0 0 0 / 20%);
@@ -268,4 +422,25 @@ aside {
     .show-message-result .btn-secondary:not(:disabled):hover {
         background: var(--dark-blue-400);
     }
+} */
+
+.dark aside {
+    background: var(--dark-blue-500);
+    box-shadow: 0 24px 32px -8px rgb(0 0 0 / 20%);
+}
+
+.dark .no-messages-found h2 {
+    color: var(--light-blue-200);
+}
+
+.dark .no-messages-found p {
+    color: var(--light-blue-300);
+}
+
+.dark #message-result {
+    color: var(--light-blue-300);
+}
+
+.dark .show-message-result .btn-secondary:not(:disabled):hover {
+    background: var(--dark-blue-400);
 }
